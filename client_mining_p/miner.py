@@ -68,6 +68,7 @@ if __name__ == '__main__':
 
         # TODO: Get the block from `data` and use it to look for a new proof
         last_block = data['last_block']
+        print(f'last_block: {last_block}')
         new_proof = proof_of_work(last_block)
         # breakpoint()
         print(f'Proof found: {new_proof}')
@@ -88,4 +89,6 @@ if __name__ == '__main__':
         # print the message from the server.
         if data['message'] == 'New Block Forged':
             coins_mined +=1
-        print(f'Coines mined: {coins_mined}')
+            print(f'Coines mined: {coins_mined}')
+        else:
+            print(data.get('message'))
